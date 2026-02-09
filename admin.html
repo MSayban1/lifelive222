@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeLive | Admin Dashboard</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/JGGCMSkx/Chat-GPT-Image-Feb-9-2026-02-01-23-PM.png">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="logo-container">
+                <img src="https://i.postimg.cc/JGGCMSkx/Chat-GPT-Image-Feb-9-2026-02-01-23-PM.png" alt="LifeLive Logo" class="logo-img">
+                <span class="logo-text">LifeLive Admin</span>
+            </div>
+            <div class="header-actions">
+                <button id="createStreamBtn" class="btn btn-primary">Create New Stream</button>
+            </div>
+        </header>
+
+        <main id="adminContent">
+            <section id="streamsList" class="animate-fade-in">
+                <h2>Active Streams</h2>
+                <div id="streamsGrid" class="grid-layout">
+                    <!-- Stream cards will be injected here -->
+                    <div class="card empty-state">
+                        <p>No active streams. Click "Create New Stream" to start.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Create Stream Modal -->
+    <div id="createStreamModal" class="modal" style="display: none;">
+        <div class="modal-content card animate-fade-in">
+            <h3>Start a New Broadcast</h3>
+            <form id="createStreamForm">
+                <div class="form-group">
+                    <label class="form-label">Stream Title</label>
+                    <input type="text" name="title" class="form-control" placeholder="Super Bowl Live 2026" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Channel Name</label>
+                    <input type="text" name="channel" class="form-control" placeholder="SportsLive HD" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Thumbnail URL (PNG)</label>
+                    <input type="url" name="thumbnail" class="form-control" placeholder="https://..." required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Channel Logo URL (PNG)</label>
+                    <input type="url" name="logo" class="form-control" placeholder="https://..." required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Description</label>
+                    <textarea name="description" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-outline" id="closeModal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Go Live</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeLive | Premium Live Streaming</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/JGGCMSkx/Chat-GPT-Image-Feb-9-2026-02-01-23-PM.png">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="homeView" class="app-container animate-fade-in">
+        <header class="header">
+            <div class="logo-container">
+                <img src="https://i.postimg.cc/JGGCMSkx/Chat-GPT-Image-Feb-9-2026-02-01-23-PM.png" alt="LifeLive Logo" class="logo-img">
+                <span class="logo-text">LifeLive</span>
+            </div>
+        </header>
+
+        <section id="banner" class="banner-carousel card">
+            <!-- Banner images will be injected here -->
+            <div class="banner-slide">
+                <h2>Welcome to Future of Streaming</h2>
+                <p>Pure Real-time Experience</p>
+            </div>
+        </section>
+
+        <section id="streams" class="streams-section">
+            <h2>Live Now</h2>
+            <div id="userStreamsGrid" class="grid-layout">
+                <!-- Live streams will be injected here -->
+            </div>
+        </section>
+    </div>
+
+    <div id="playerView" class="player-fullscreen" style="display: none;">
+        <!-- Dedicated player screen -->
+        <div class="player-header">
+            <button id="backBtn" class="btn btn-outline btn-sm">← Back</button>
+            <div class="live-indicator">LIVE</div>
+            <div class="viewer-count">
+                <span class="viewer-icon">👥</span>
+                <span id="liveViewerCount">0</span>
+            </div>
+        </div>
+        
+        <div class="life-live-player" id="mainPlayerContainer">
+            <video id="remoteVideo" class="video-element" autoplay playsinline></video>
+            <div id="logoOverlay" class="channel-logo-overlay"></div>
+            
+            <!-- Custom Controls -->
+            <div class="custom-controls">
+                <button id="connectBtn" class="btn btn-primary">Connect to Stream</button>
+                <div class="player-bottom-controls">
+                    <button id="playPauseBtn">▶</button>
+                    <div class="quality-selector">
+                        <label>Quality:</label>
+                        <select id="qualitySelect">
+                            <option value="auto">Auto</option>
+                            <option value="low">Low (480p)</option>
+                            <option value="medium">Medium (720p)</option>
+                            <option value="high">High (1080p)</option>
+                        </select>
+                    </div>
+                    <button id="fullscreenBtn">⛶</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="stream-info-container card">
+            <div class="channel-info">
+                <div id="streamLogo" class="logo-avatar"></div>
+                <div>
+                    <h1 id="streamTitle">Stream Title</h1>
+                    <p id="channelName">Channel Name</p>
+                </div>
+            </div>
+            <p id="streamDescription">Description...</p>
+            <div class="stream-stats">
+                <span class="stream-timer" id="streamTimer">00:00:00</span>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="user.js"></script>
+</body>
+</html>
